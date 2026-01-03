@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Überprüfung läuft…</title>
+<style>
+  body {
+    background: black;
+    color: #00ff00;
+    font-family: monospace;
+    text-align: center;
+    padding-top: 20%;
+  }
+</style>
+</head>
+<body>
+
+<h1 id="text">Verbindung wird überprüft…</h1>
+
+<script>
+let steps = [
+  "IP wird analysiert…",
+  "Browserdaten werden geladen…",
+  "ungefährer standort wird gesucht",
+  "Fast fertig…"
+];
+
+let i = 0;
+let text = document.getElementById("text");
+
+let interval = setInterval(() => {
+  if (i < steps.length) {
+    text.textContent = steps[i];
+    i++;
+  } else {
+    clearInterval(interval);
+    text.innerHTML = "erfolgreicher hintergrund check <br><br> ergebnis : hoch gradig explosiv, terrorist!";
+  }
+}, 1500);
+</script>
+
+</body>
+</html>
